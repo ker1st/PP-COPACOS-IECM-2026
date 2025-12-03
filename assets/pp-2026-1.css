@@ -1,0 +1,175 @@
+.permanent-marker-regular {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 100;
+  font-style: normal;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.img-fit {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+#timelineCarousel .card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+#timelineCarousel .card:hover {
+  transform: scale(1.04);
+}
+
+#timelineCarousel .carousel-control-prev-icon,
+#timelineCarousel .carousel-control-next-icon {
+  filter: invert(1);
+}
+
+.text01 {
+  font-family: "Kalam", cursive;
+  font-style: normal;
+}
+
+
+/* ================================
+   ENCABEZADO RESPONSIVO
+================================ */
+@media (max-width: 768px) {
+    .text01 {
+        font-size: 42px !important;      /* Antes 72px */
+        line-height: 1;
+        margin-top: 1rem;
+    }
+
+    .img-fit {
+        width: 70%;                      /* Reduce luchadores */
+        max-width: 120px;
+        margin: 0 auto;
+    }
+
+    .row.align-items-center > div {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+
+
+.cards-slider {
+    position: relative;
+    width: 100%;
+    padding: 20px 20px;
+    /* overflow: hidden; */
+    overflow: visible !important;
+}
+
+.cards-container {
+    display: flex;
+    gap: 20px;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.card-item {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    min-width: 300px;
+    flex: 0 0 25%; /* 4 tarjetas en desktop */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+
+.arrow {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background: rgb(200, 200, 200);
+    border-radius: 50%;
+    border: none;
+    font-size: 24px;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
+
+.arrow:hover {
+    background: rgb(150,150,150);
+}
+
+.bg-pp {
+  background-image: linear-gradient(
+        /* rgba(148, 78, 253, 0.55),  */
+        /* rgba(10, 178, 153, 0.65) */
+        rgba(151, 14, 237, 0.15),
+        rgba(245, 13, 210, 0.08)
+    ),
+    url(./img/pp-luchadores-bg.png);
+    background-size: cover;
+    background-position: bottom;
+}
+
+.text-start {
+  font-size: 99px; 
+  font-weight: bolder; 
+  color: rgba(228, 135, 5, 0.714);
+  -webkit-text-stroke: 3px #3f1a18;
+}
+
+
+/* Contenedor vertical de flechas */
+.arrows-right {
+    position: absolute;
+    top: 50%;
+    right: 0;       /* 🔥 Flechas visibles dentro del slider */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 9999;  /* 🔥 Se asegura de estar encima */
+}
+
+/* Botones */
+.arrow {
+    background: #d9d9d9;
+    border-radius: 50%;
+    border: none;
+    font-size: 22px;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.arrow:hover {
+    background: #bfbfbf;
+}
+
+/* Móvil */
+@media (max-width: 576px) {
+    .arrows-right {
+        right: 10px;      /* 🔥 Se meten un poco más en móvil */
+        top: 55%;
+    }
+}
+
+
+.color-card {
+  background-image: linear-gradient(
+    rgba(230, 194, 108, 0.9),
+    rgba(209, 110, 234, 0.6)
+  ),
+  url(./img/copaco001.png);
+  background-size: cover;
+  background-position: center;
+}

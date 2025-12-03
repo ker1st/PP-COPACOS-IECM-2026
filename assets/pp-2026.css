@@ -1,0 +1,187 @@
+.corner {
+    position: fixed;
+    width: 10vw;     /* 1/4 del ancho del body */
+    height: 65vh;    /* 1/4 del alto del body */
+    overflow: hidden;
+    z-index: 2;     /* Para que no estorbe con el contenido */
+}
+
+.corner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* mantiene proporción y llena el área */
+    object-position: center top; /* mostrará la mitad superior del cuerpo */
+}
+
+/* ESQUINAS */
+.corner-top-left {
+    top: 0;
+    left: 0;
+}
+
+.corner-top-right {
+    top: 0;
+    right: 0;
+}
+
+.corner-bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.corner-bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+
+/* ============================
+   RESPONSIVE DESIGN
+=============================== */
+
+/* Tablets (<= 992px) */
+@media (max-width: 992px) {
+    .corner {
+        width: 25vw;
+        height: 40vh;
+    }
+
+    .corner img {
+        object-position: center;
+    }
+
+    .navbar img {
+        height: 80px !important;
+        margin-left: 1rem !important;
+    }
+}
+
+/* Móviles medianos (<= 768px) */
+@media (max-width: 768px) {
+    .corner {
+        width: 30vw;
+        height: 35vh;
+        opacity: 0.9;
+    }
+
+    .corner-bottom-left,
+    .corner-bottom-right {
+        bottom: 1rem;
+    }
+
+    .navbar img {
+        height: 70px !important;
+        margin-left: 0 !important;
+    }
+}
+
+/* Móviles pequeños (<= 576px) */
+@media (max-width: 576px) {
+    .corner {
+        width: 35vw;
+        height: 30vh;
+        opacity: 0.6; /* Se ven pero no estorban */
+        z-index: 1;
+    }
+
+    .corner-bottom-left,
+    .corner-bottom-right {
+        bottom: 0.5rem;
+    }
+
+    /* Si quieres ocultarlas en móviles, descomenta esto: */
+    /*
+    .corner {
+        display: none;
+    }
+    */
+
+    .navbar img {
+        height: 60px !important;
+    }
+}
+
+
+/* MENU HAMBURGUESA SOBRE EL CONTENIDO */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        z-index: 9999;         /* Asegura que quede encima de todo */
+        padding: 1rem;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* Evita que empuje el contenido */
+    .navbar {
+        position: relative;
+        z-index: 10000;        /* La navbar debe estar aún más arriba */
+    }
+
+    /* Ocultamos imágenes en móvil */
+    .corner {
+        display: none !important;
+    }
+}
+
+
+/* ===========================
+   CONTENEDOR CENTRAL DESKTOP
+   =========================== */
+@media (min-width: 992px) {
+    .content-center {
+        margin-left: 20vw;   /* deja libre el 25% para la imagen izquierda */
+        margin-right: 20vw;  /* deja libre el 25% para la imagen derecha */
+        width: auto;
+    }
+}
+
+/* ===========================
+   MODO MÓVIL
+   =========================== */
+@media (max-width: 991px) {
+    .content-center {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+}
+
+
+/* .main-text {
+    font-size: 68pt;
+    font-weight: bolder;
+    color: rgb(137, 19, 206);
+} */
+
+.main-text {
+    font-size: 82pt;
+    font-weight: bolder;
+    background: linear-gradient(90deg, #ff0080, #3a740b, #32084e);
+    background-size: 300% 300%;
+    animation: gradientMove 5s infinite linear;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+#timelineCarousel .card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+#timelineCarousel .card:hover {
+  transform: scale(1.04);
+}
+
+#timelineCarousel .carousel-control-prev-icon,
+#timelineCarousel .carousel-control-next-icon {
+  filter: invert(1);
+}
