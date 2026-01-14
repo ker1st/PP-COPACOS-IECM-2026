@@ -1,3 +1,17 @@
+:root {
+  --nav-bg: #ffffff;
+  --nav-text: #ffffff;        /* morado del menú #d42fb9 */
+  --nav-text-hover: #5b1b6b;  /* morado más oscuro */
+  --nav-border: #e9d9ef;      /* línea inferior suave */
+}
+
+.nav-color {
+  background: linear-gradient(
+    rgba(143, 13, 237, 0.63),
+    rgba(168, 44, 208, 0.40)
+  );
+}
+
 .permanent-marker-regular {
   font-family: "Permanent Marker", cursive;
   font-weight: 100;
@@ -30,6 +44,87 @@ body {
   filter: invert(1);
 }
 
+.bg-pp {
+  background-image: linear-gradient(
+        /* rgba(151, 14, 237, 0.15),  */
+        /* rgba(245, 13, 210, 0.08) */
+        rgba(18, 161, 168, 0.15),
+        rgba(173, 192, 196, 0.06)
+    ),
+    url(./img/luchadores-bg-1.png);/*pp-luchadores-bg.png*/
+    background-size: cover;
+    background-position: bottom;
+}
+
+.text-start {
+  font-size: 99px; 
+  font-weight: bolder; 
+  color: rgba(240, 140, 10, 0.877);
+  -webkit-text-stroke: 3px #41392F;
+}
+
+.text-pp-secundary {
+  font-size: 36pt; 
+  font-weight: bolder; 
+  color: rgba(240, 140, 10, 0.877);
+  -webkit-text-stroke: 1px #41392F;;
+}
+
+
+.pp-bg {
+  background-image: linear-gradient(
+        rgba(95, 58, 152, 0.3),
+        rgba(102, 22, 224, 0.1)
+    ),
+    url(./img/);
+  border: -0pt solid rgb(148, 83, 177);
+  border-radius: 15px;
+}
+
+
+.text-participa-accord {
+  font-size: 20pt;
+  text-align: center;
+}
+
+.accordion-button {
+    min-height: 120px; /* ajusta según diseño */
+    display: flex;
+    align-items: center;
+}
+
+.accordion-pp .accordion-item {
+    border-radius: 12px;
+    overflow: hidden; /* MUY IMPORTANTE */
+}
+
+
+.accordion-pp .accordion-button {
+    background-color: #9a24f585;   /* fondo */
+    color: #f9f6f4;            /* texto */
+    font-weight: bolder;
+    border-radius: 12px;
+}
+
+.accordion-pp .accordion-button:not(.collapsed) {
+    background-color: #c31779ef;;/*st-#b6a0de -nd-#e6d9ff*/
+    color: #f4f5f1;/*st #5A5824*/
+    box-shadow: none;
+    border-radius: 12px;
+}
+
+.circle-list {
+    list-style-type: circle;
+    color: #00aa00;
+}
+
+.square-list {
+    list-style-type: square;
+    color: #d27847;
+    font-size: 14pt;
+    font-weight: bolder;
+}
+
 .text01 {
   font-family: "Kalam", cursive;
   font-style: normal;
@@ -41,9 +136,10 @@ body {
 ================================ */
 @media (max-width: 768px) {
     .text01 {
-        font-size: 42px !important;      /* Antes 72px */
+        font-size: 40px !important;      /* Antes 72px */
         line-height: 1;
-        margin-top: 1rem;
+        margin-top: -2.5rem;
+        text-align: center;
     }
 
     .img-fit {
@@ -56,8 +152,27 @@ body {
         text-align: center;
         margin-top: 10px;
     }
-}
 
+    .bg-pp {
+    /* Cambiar imagen SOLO en móvil */
+    background-image: linear-gradient(
+          #e2cfee40,
+          rgba(212, 182, 208, 0.25)
+      ),
+      url(./img/luchadores-bg-mob-1.png); /* <= NUEVA IMAGEN */
+    
+    background-size: cover;
+    background-position: center;
+  }
+
+  .text-start {
+    font-size: 58px;                    /* tamaño más pequeño */
+    color: #db5c12f1;                     /* nuevo color si quieres */
+    -webkit-text-stroke: 2px #805515;   /* enmarcado diferente */
+    font-weight: bold;
+    text-align: center;                 /* opcional */
+  }
+}
 
 
 .cards-slider {
@@ -71,8 +186,20 @@ body {
 .cards-container {
     display: flex;
     gap: 20px;
+    overflow-x: auto;          /* CLAVE */
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    cursor: grab;
+    user-select: none;
+    scroll-snap-type: x mandatory;
+}
+
+.cards-container:active {
+    cursor: grabbing;
+}
+
+/* Ocultar scrollbar (opcional) */
+.cards-container::-webkit-scrollbar {
+    display: none;
 }
 
 .card-item {
@@ -107,36 +234,17 @@ body {
     background: rgb(150,150,150);
 }
 
-.bg-pp {
-  background-image: linear-gradient(
-        /* rgba(148, 78, 253, 0.55),  */
-        /* rgba(10, 178, 153, 0.65) */
-        rgba(151, 14, 237, 0.15),
-        rgba(245, 13, 210, 0.08)
-    ),
-    url(./img/pp-luchadores-bg.png);
-    background-size: cover;
-    background-position: bottom;
-}
-
-.text-start {
-  font-size: 99px; 
-  font-weight: bolder; 
-  color: rgba(228, 135, 5, 0.714);
-  -webkit-text-stroke: 3px #3f1a18;
-}
-
 
 /* Contenedor vertical de flechas */
 .arrows-right {
     position: absolute;
     top: 50%;
-    right: 0;       /* 🔥 Flechas visibles dentro del slider */
+    right: 0;       /* Flechas visibles dentro del slider */
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: 12px;
-    z-index: 9999;  /* 🔥 Se asegura de estar encima */
+    z-index: 9999;  /* Se asegura de estar encima */
 }
 
 /* Botones */
@@ -158,18 +266,163 @@ body {
 /* Móvil */
 @media (max-width: 576px) {
     .arrows-right {
-        right: 10px;      /* 🔥 Se meten un poco más en móvil */
+        right: 10px;
         top: 55%;
     }
 }
 
 
-.color-card {
+.color-card-1 {
+  border: 1px solid #727925 !important;
   background-image: linear-gradient(
-    rgba(230, 194, 108, 0.9),
-    rgba(209, 110, 234, 0.6)
+    rgba(219, 233, 229, 0.85),
+    rgba(114, 221, 184, 0.85)
   ),
-  url(./img/copaco001.png);
+  url(./img/copaco1.png);
   background-size: cover;
   background-position: center;
+  color: #170815;
+  /* -webkit-text-stroke: 0.5px #2d280e; */
+}
+
+.color-card-2 {
+  border: 1px solid #727925 !important;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.79),
+    rgba(151, 129, 67, 0.87)
+  ),
+  url(./img/consulta02.png);
+  background-size: cover;
+  background-position: center;
+  color: #170815;
+  /* -webkit-text-stroke: 0.5px #2d280e; */
+}
+
+.color-card-3 {
+  border: 1px solid #727925 !important;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.79),
+    rgba(61, 113, 98, 0.85)
+  ),
+  url(./img/pp-2026/jornada-adelantada1.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #170815;
+  /* -webkit-text-stroke: 0.5px #2d280e; */
+}
+.color-card-4 {
+  border: 1px solid #8d21b8 !important;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.79),
+    rgba(119, 75, 126, 0.8)
+  ),
+  url(./img/pp-2026/pulgares.png);
+  background-size: cover;
+  background-position: center;
+  color: #170815;
+  /* -webkit-text-stroke: 0.5px #2d280e; */
+}
+
+.color-card-5 {
+  border: 1px solid #c58127 !important;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.79),
+    rgba(90, 82, 61, 0.8)
+  ),
+  url(./img/pp-2026/postit.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #170815;
+  /* -webkit-text-stroke: 0.5px #2d280e; */
+}
+
+
+.h2, h2 {
+  color: #d39c24e5;
+  /* -webkit-text-stroke: 1px #160212bf; */
+  font-size: 2rem;
+}
+
+.line-text{
+  display: inline-block;        /* Línea del tamaño del texto */
+  border-bottom: 4px solid #ACB451; /* Grosor y color */
+  padding-bottom: 16px;          /* Distancia entre texto y línea */
+}
+
+.navbar .nav-link {
+  color: #811c7c !important;
+  font-weight: normal;
+}
+
+.navbar .nav-link:hover {
+  color: #82BC64 !important;
+  font-weight: bold;
+}
+
+/* Link activo */
+.navbar .nav-link.active {
+    color: #00aa00 !important;
+}
+
+.no-arrow::after {
+  display: none !important;
+}
+
+
+/* Fondo del navbar */
+.navbar {
+  background-color: var(--nav-bg) !important;
+  border-bottom: 1px solid var(--nav-border);
+}
+
+/* Links principales */
+.navbar .nav-link {
+  color: var(--nav-text) !important;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  transition: color 0.2s ease;
+}
+
+/* Hover */
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: var(--nav-text-hover) !important;
+}
+
+/* Dropdown menú */
+.navbar .dropdown-menu {
+  border-radius: 10px;
+  border: 1px solid var(--nav-border);
+  box-shadow: 0 10px 25px rgba(226, 72, 72, 0.08);
+  padding: 0.5rem 0;
+}
+
+/* Items del dropdown */
+.navbar .dropdown-item {
+  color: #333;
+  padding: 0.6rem 1.2rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hover dropdown item */
+.navbar .dropdown-item:hover {
+  background-color: #f4e9f7;
+  color: var(--nav-text-hover);
+}
+
+/* Línea divisoria */
+.navbar .dropdown-divider {
+  border-color: var(--nav-border);
+}
+
+/* Quitar borde/outline negro en navbar */
+.navbar .nav-link:focus,
+.navbar .nav-link:focus-visible,
+.navbar .dropdown-toggle:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.footer-tx {
+  background: #f295f54d;
 }

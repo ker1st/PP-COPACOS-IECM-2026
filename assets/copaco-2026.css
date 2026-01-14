@@ -1,0 +1,51 @@
+.nav-color {
+  background: linear-gradient(
+    rgba(229, 255, 233),
+    rgba(229, 255, 233)
+  );
+}
+
+.navbar .nav-link {
+  color: #811c7c !important;
+  font-weight: normal;
+}
+
+.navbar .nav-link:hover {
+  color: #067d92c1 !important;
+  font-weight: bold;
+}
+
+.copaco-bg {
+  background-image: linear-gradient(
+        rgba(95, 58, 152, 0.3),
+        rgba(102, 22, 224, 0.1)
+    ),
+    url(./img/);
+  border: -0pt solid rgb(148, 83, 177);
+  border-radius: 15px;
+}
+
+.text-copacos-secundary {
+  font-size: 36pt; 
+  font-weight: bolder; 
+  color: rgba(149, 23, 116);
+}
+
+.square-list {
+  list-style-type: square;
+  color: rgb(46, 103, 122);
+  font-size: 14pt;
+  font-weight: 500;
+}
+
+.card-copaco-1 {
+  background-image: linear-gradient(
+        rgba(214, 243, 243, 0.96),
+        rgba(125, 205, 224, 0.90)
+    ),
+    url(./img/postits2.png);
+  border: -0pt solid rgb(148, 83, 177);
+  border-radius: 1px;
+  background-size: cover;
+  background-position: bottom;
+}
